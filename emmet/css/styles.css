@@ -1,9 +1,9 @@
 html {
 	background: linear-gradient(#B5C7FF, #5991FF);
-	height: 100vh;
 }
 
 body {
+	min-height: 100%;
 	font: 16px Arial;
 }
 
@@ -34,4 +34,13 @@ section div.ejemplo {
 section div.ejemplo:hover {
 	background-color: #6D7AAB;
 	cursor: pointer;
+}
+
+div.container {
+	margin: 0 auto;
+	width: 100%;
+}
+
+div.row {
+	float: left;
 }
