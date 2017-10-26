@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anidar Elementos ( > )</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+	<h2>Anidar Elementos ( > )</h2>
+	<section>
+		<div class="ejemplo">
+			ul>li>a>img
+		</div>
+		<div class="resultado">
+<!--Truco para ejecutar bloque-->
+<xmp>
+<ul>
+	<li>
+		<a href="">
+			<img src="" alt="">
+		</a>
+	</li>
+</ul>
+</xmp>
+		
+		</div>
+	</section>
+
+	<!--Separador-->
+
+	<h2>Elementos Hermanos ( + )</h2>
+	<section>
+		<div class="ejemplo">
+			section+header+nav
+		</div>
+		<div class="resultado">
+<!--Truco para ejecutar bloque-->
+<xmp>
+<section></section>
+<header></header>
+<nav></nav>
+</xmp>
+		
+		</div>
+	</section>
+
+	<!--Separador-->
+
+	<h2>Repetir Elementos ( * )</h2>
+	<section>
+		<div class="ejemplo">
+			ul>li*3 
+		</div>
+		<div class="resultado">
+<!--Truco para ejecutar bloque-->
+<xmp>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</xmp>
+		
+		</div>
+	</section>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('.resultado').hide();
+			$('section').on('click', '.ejemplo', function(event) {
+				event.preventDefault();
+				$(this).next(".resultado").slideToggle(500);
+			});
+		});
+
+	</script>
+</body>
+</html>
