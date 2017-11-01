@@ -17,13 +17,18 @@ section {
 	background-color: #fff;
 	margin: 20px auto;
 	padding: 20px;
-	width: 450px;
+	width: 600px;
 }
 
 section div {
 	border: 1px solid #ccc;
 	padding: 10px;
 	margin-bottom: 4px;
+}
+
+xmp {
+	width: 100%;
+	font-size: 14px;
 }
 
 section div.ejemplo {
@@ -39,9 +44,10 @@ section div.ejemplo:hover {
 
 div.container {
 	margin: 0 auto;
-	width: 100%;
+	width: 100% !important;
 }
 
 div.row {
+	width: 50% !important;
 	float: left;
 }
