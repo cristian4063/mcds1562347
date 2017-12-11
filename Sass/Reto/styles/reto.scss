@@ -1,0 +1,143 @@
+@import "variables";
+@import "common";
+@import "boxes.scss";
+
+@mixin font-raleway {
+	font: {
+		family: $font-raleway;
+	    weight: 300;
+	    style: normal;
+	}
+	color: $white;
+}
+
+.sa-body {
+	background-color: $white;
+}
+
+.sa-header {
+	position: relative;
+    background-color: $gray-dark;
+}
+
+.sa-container-header {
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+.sa-title-header {
+	@include font-raleway;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0px;
+    .sa-link {
+    	color: $white;
+    }
+}
+
+.sa-link {
+    text-decoration: none;
+    &:hover {
+		color: $white;
+	}
+}
+
+.sa-margin {
+	margin: 0 35px;
+}
+
+.sa-margin-large {
+	margin: 0 60px;
+}
+
+.sa-color {
+	color: $color;
+}
+
+.sa-color-dark {
+	color: $dark;
+}
+
+.sa-spacer-block {
+	height: 10px;
+}
+
+.sa-spacer-top-large {
+	padding-top: 90px;
+}
+
+.sa-menu-horizontal {
+    list-style: none;
+	.sa-menu-item {
+		display: inline-block;
+    	position: relative;
+    	.sa-menu-link {
+		    @include font-raleway;
+		    @extend .text-center;
+		    text-decoration: none;
+		    padding: 16px 0;
+		    display: block;
+		    font-size: 18px;
+		    line-height: 21px;
+		}
+	    &:hover, .sa-menu-link-active {
+    		color: $color;
+    		.sa-menu-link {
+    			color: $color;
+    		}
+    		&:after {
+    			content: '';
+			    width: 29px;
+			    position: absolute;
+			    bottom: 0;
+			    left: 50%;
+			    height: 1px;
+			    background: $color;
+			    transform: translateX(-50%);
+    		}
+	    }
+	    &:not(:first-child) {
+    		margin-left: 29px;
+    	}
+	}
+}
+
+.sa-container {
+    background-color: $color;
+}
+
+.sa-container-dark {
+	background-color: $dark;
+}
+
+.sa-image-link {
+	position: relative;
+    display: inline-block;
+}
+
+.sa-image-picture {
+	width: 100%;
+    max-width: 100%;
+}
+
+.sa-text-content {
+	@include font-raleway;
+    line-height: 1;
+    letter-spacing: 0px;
+	.sa-text-title {
+    	font-family: $font-opensans;
+    	font-size: 60px;
+	}
+	.sa-text-subtitle {
+    	font-size: 48px;
+	}
+	.sa-text-paragraph {
+    	font-size: 24px;
+    	line-height: 1.5;
+	}
+	.sa-text-normal {
+    	font-size: 14px;
+    	line-height: 1.7;
+	}
+}
+

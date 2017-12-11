@@ -1,0 +1,41 @@
+h2 mixin list
+
+//- Declaration
+mixin list
+	ul
+		li Element1
+		li Element2
+		li Element3
+
+//- Use it
++list
++list
+
+h2 mixin pet(name)
+
+//- Declaration
+mixin pet(name)
+	li.pet= name
+
+ul
+	//- Use it
+	+pet('cat')
+	+pet('dog')
+	+pet('pig')
+
+h2 mixin article(title)
+
+//- Declaration
+mixin article(title)
+	.article
+		h1= title
+		if block
+			block
+		else
+			p No content provided
+
+//- Use it
++article('Hello world')
++article('Hello world')
+	p This is my
+	p Amazing article

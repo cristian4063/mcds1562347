@@ -1,0 +1,37 @@
+h1 Casos
+
+h2 Caso 1
+- var friends = 8
+case friends
+	when 0
+		p you have no friends
+	when 1
+		p you have a friend
+	default
+		p you have #{friends} friends
+
+h2 Caso 2
+- var friends = 0
+case friends
+	when 0
+	when 1
+		p you have very few friends
+	default
+		p you have #{friends} friends
+
+h2 Caso 3
+- var friends = 0
+case friends
+	when 0
+		- break
+	when 1
+		p you have very few friends
+	default
+		p you have #{friends} friends
+
+h2 Caso 4
+- var friends = 1
+case friends
+	when 0: p you have no friends
+	when 1: p you have a friend
+	default: p you have #{friends} friends

@@ -1,0 +1,91 @@
+extends include/layout.pug
+
+block metas
+	meta(charset='UTF-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1')
+
+block title
+	title CARDIO
+
+block head_links
+	// Normalize 
+	link(rel='stylesheet' type='text/css' href='css/normalize.css')
+	// Bootstrap 
+	link(rel='stylesheet' type='text/css' href='css/bootstrap.css')
+	// Owl 
+	link(rel='stylesheet' type='text/css' href='css/owl.css')
+	// Animate.css 
+	link(rel='stylesheet' type='text/css' href='css/animate.css')
+	// Font Awesome 
+	link(rel='stylesheet' type='text/css' href='fonts/font-awesome/font-awesome.min.css')
+	// Elegant Icons 
+	link(rel='stylesheet' type='text/css' href='fonts/eleganticons/et-icons.css')
+	// Main style 
+	link(rel='stylesheet' type='text/css' href='css/cardio.css')
+
+block scripts
+	// Scripts
+	script(src='js/jquery-1.11.1.min.js')
+	script(src='js/owl.carousel.min.js')
+	script(src='js/bootstrap.min.js')
+	script(src='js/jquery.onepagenav.js')
+	script(src='js/main.js')
+
+block menu
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+	//  - - - BLOQUE MENU CON MIXIN (3 parametros) - - - //
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+	mixin list(nameClass, link, name)
+		li(class=nameClass)
+			a(href=link)= name
+
+	ul.nav.navbar-nav.navbar-right.main-nav
+		+list('active', '#intro', 'Home')
+		+list('', '#services', 'About Us')
+		+list('', '#team', 'Cleaning Services')
+		+list('', '#pricing', 'Pricing')
+		+list('', '#contact', 'Contact')
+
+block condicionales
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+	//  - - - -  BLOQUE VARIABLES CONDICIONALES - - - -  //
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+	- var hasPrice = true
+	- var blockPrice = {price: '$69.00', text: '1 - 5 sessions / month'};
+
+	.container-fluid
+		.row
+			.col-md-12
+				if hasPrice
+					.team.text-center
+						.cover(style='background:url(\'img/team/team-cover1.jpg\'); background-size:cover;')
+							.overlay.text-center
+								h3.white= blockPrice.price
+								h5.light.light-white= blockPrice.text
+				else
+					.nothing
+						p no has price
+
+block ciclos
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+	// - - - - - - - BLOQUE CON UN CICLO - - - - - - - - //
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+	
+	.container-fluid
+		.row.services
+			-for (var i = 0; i < 3; i++)
+				.col-md-4
+					.service
+						.icon-holder
+							img(src='img/icons/heart-blue.png' alt='' class='icon')
+						h4.heading Cardio Training
+						p.description A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.
+
+block footer
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+	// - - - - - - - BLOQUE ARCHIVO EXTERNO - - - - - -  //
+	// - - - - - - - - - - - - - - - - - - - - - - - - - //
+	
+	include include/footer.pug 

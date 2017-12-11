@@ -1,0 +1,21 @@
+h1 CSS en archivo pug
+
+style(stylesheet).
+	.classname { background-color: #666; }
+	p#valueunique {
+		color: #FFF;
+		font-family: monospace;
+		font-size: 24px;
+	}
+
+.classname .classname { property: value; }
+	p#valueunique
+		|p#valueunique {
+		br
+		|property1: value1;
+		br
+		|property2: value2;
+		br
+		|property3: value3;
+		br
+		|}
